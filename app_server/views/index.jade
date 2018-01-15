@@ -1,5 +1,38 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  #banner.page-header
+    .row
+      .col-xs-12.col-md-5
+        h2.text-center #{pageHeader.title}
+      .col-xs-12.col-md-7
+        p.text-center(style="font-size:15px; padding-top:15px;") #{pageHeader.banner}
+  hr
+  .row
+    .col-xs-12.col-md-8
+      form(action="")
+        label(for='key') #{redirect.url}
+        input#key(type='text', style="width: 60px;")
+        input(type="submit", value="Go", style="margin-left:2px;")
+    .col-xs-12.col-md-4
+      p
+        b Note: 
+        | #{redirect.note}
+  hr
+  .row
+    .col-md-6
+      p Or, Create a new key for url
+  .row
+    .col-xs-12.col-md-8
+      form(action="")
+        label(for='url', style="margin-top: 10px;") URL:
+        br
+        input#url(type='text', placeholder="Paste your URL")
+        br
+        label(for='key', style="margin-top: 10px;") Key:
+        br
+        input#key(type='text', placeholder="Put unique key")
+        br
+        input(type="submit", style="margin-top: 10px; margin-bottom: 10px;")
+    .col-xs-12.col-md-4
+      p Suggestions:

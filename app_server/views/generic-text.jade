@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  #banner.page-header
+    .row
+      .col-xs-12.col-md-5
+        h2.text-center #{pageHeader.title}
+      .col-xs-12.col-md-7
+        p.text-center(style="font-size:15px; padding-top:15px;") #{pageHeader.banner}
+  hr
+  .row
+    .col-xs-12.col-md-6
+      p #{content.definition}
+      br
+      p #{content.usage}
